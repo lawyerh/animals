@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  color: black;
+}
+
+.header__container {
+  margin-bottom: 20px;
+  text-align: center;
+  background-image: linear-gradient(to bottom, slategrey, white);
+  background-color: slategrey;
+  padding: 10px 0 20px 0;
+}
+
+.header__heading-primary {
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.header__input,
+.header__input:focus,
+.header__input:active {
+  border: none;
+  border-bottom: 2px solid black;
+  margin-right: 10px;
+  font-size: 20px;
+  border-radius: 10%;
+  background: transparent;
+}
+
+.card {
+  display: inline-block;
+  width: 200px;
+  background-color: slategrey;
+  text-align: center;
+  border: 2px solid black;
+  margin: 5px;
+}
+
+.card__photo {
+  height: 100px;
+}
+
+.card__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+}
