@@ -1,13 +1,32 @@
 import { useState } from "react";
 
 function Header({
-  searchForAnimal,
+  updateAnimal,
   curAnimal,
   selections,
   addToList,
   listAnimals,
 }) {
   const [curStyle, changeStyle] = useState("red");
+
+  function checkAnimal(ev) {
+    //If the entered animal is inside our database of animals
+    if (selections.includes(ev.target.value.toLowerCase())) {
+      //Add the animal to the animal array
+      updateAnimal(ev.target.value);
+    } else {
+      updateAnimal("");
+    }
+  }
+
+  function checkSubmission() {
+    if (curAnimal !== "") {
+      addToList([...listAnimals, curAnimal]);
+    } else {
+
+      //Notify user of invalid submission
+    }
+  }
 
   return (
     <div className="header__container">
@@ -16,29 +35,9 @@ function Header({
         type="text"
         className="header__input"
         placeholder="Cow, bird, horse..."
-        onChange={(e) => {
-          if (selections.includes(e.target.value.toLowerCase())) {
-            changeStyle("green");
-            searchForAnimal(e.target.value);
-          } else {
-            changeStyle("red");
-          }
-        }}
+        onChange={(e) => checkAnimal(e)}
       />
-      <button
-        className="header__submit"
-        onClick={() => {
-          addToList([...listAnimals, curAnimal]);
-          console.log(listAnimals);
-        }}
-        style={{
-          backgroundColor: curStyle,
-          color: "white",
-          fontWeight: 700,
-          fontSize: 20,
-          textTransform: "uppercase",
-        }}
-      >
+      <button className="header__submit" onClick={() => checkSubmission()}>
         Search
       </button>
     </div>

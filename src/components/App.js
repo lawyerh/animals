@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 import Header from "./Header";
 import AnimalCard from "./AnimalCard";
 
@@ -19,7 +18,7 @@ function App() {
   return (
     <div>
       <Header
-        searchForAnimal={updateAnimal}
+        updateAnimal={updateAnimal}
         curAnimal={animal}
         selections={selections}
         addToList={addToList}

@@ -22,11 +22,30 @@
 .header__input:focus,
 .header__input:active {
   border: none;
+  outline: none;
   border-bottom: 2px solid black;
   margin-right: 10px;
   font-size: 20px;
   border-radius: 10%;
   background: transparent;
+}
+
+.header__submit {
+  border: none;
+  vertical-align: bottom;
+  padding: 8px;
+  font-weight: 700;
+  color: black;
+  border-radius: 10%;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: transparent;
+  border-bottom: 2px solid black;
+}
+
+.header__submit:hover {
+  cursor: pointer;
 }
 
 .card {
